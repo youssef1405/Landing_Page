@@ -65,5 +65,14 @@ createNavbar();
 // Build menu
 
 // Scroll to section on link click
+const scrollToSection = () => {
+  const menuLinks = document.querySelectorAll('.menu__link');
+  for (let i = 0; i < menuLinks.length; i++) {
+    menuLinks[i].addEventListener('click', () => {
+      document.getElementById(`section${i + 1}`).scrollIntoView();
+    });
+  }
+};
+scrollToSection();
 
 // Set sections as active
