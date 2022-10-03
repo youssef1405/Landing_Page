@@ -24,7 +24,7 @@
  */
 
 const navbarList = document.getElementById('navbar__list');
-const sections = document.querySelectorAll('.landing__container');
+const sections = document.querySelectorAll('section');
 
 /**
  * End Global Variables
@@ -44,7 +44,7 @@ const createNavbar = () => {
     const listItem = document.createElement('li');
     const menuLink = document.createElement('a');
     menuLink.classList.add('menu__link');
-    menuLink.textContent = sections[i].firstElementChild.textContent;
+    menuLink.textContent = sections[i].getAttribute('data-nav');
     listItem.appendChild(menuLink);
     navbarList.appendChild(listItem);
   }
