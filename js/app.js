@@ -76,3 +76,16 @@ const scrollToSection = () => {
 scrollToSection();
 
 // Set sections as active
+
+document.addEventListener('scroll', () => {
+  for (const section of sections) {
+    if (
+      section.getBoundingClientRect().top < 150 &&
+      section.getBoundingClientRect().bottom > 150
+    ) {
+      section.classList.add('your-active-class');
+    } else {
+      section.classList.remove('your-active-class');
+    }
+  }
+});
