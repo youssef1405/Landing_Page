@@ -50,8 +50,6 @@ const createNavbar = () => {
   }
 };
 
-createNavbar();
-
 // Add class 'active' to section when near top of viewport
 
 // Scroll to anchor ID using scrollTO event
@@ -75,19 +73,29 @@ const scrollToSection = () => {
     });
   }
 };
-scrollToSection();
+
+// Add an active state to navigation menu items when section in viewport
 
 // Set sections as active
 
 document.addEventListener('scroll', () => {
-  for (const section of sections) {
+  for (let i = 0; i < sections.length; i++) {
     if (
-      section.getBoundingClientRect().top < 150 &&
-      section.getBoundingClientRect().bottom > 150
+      sections[i].getBoundingClientRect().top < 150 &&
+      sections[i].getBoundingClientRect().bottom > 150
     ) {
-      section.classList.add('your-active-class');
+      sections[i].classList.add('your-active-class');
+      document
+        .querySelectorAll('.menu__link')
+        [i].classList.add('active-menu-link');
     } else {
-      section.classList.remove('your-active-class');
+      sections[i].classList.remove('your-active-class');
+      document
+        .querySelectorAll('.menu__link')
+        [i].classList.remove('active-menu-link');
     }
   }
 });
+
+createNavbar();
+scrollToSection();
