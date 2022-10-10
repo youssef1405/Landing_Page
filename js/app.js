@@ -69,7 +69,9 @@ const scrollToSection = () => {
   const menuLinks = document.querySelectorAll('.menu__link');
   for (let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener('click', () => {
-      document.getElementById(`section${i + 1}`).scrollIntoView();
+      document
+        .getElementById(`section${i + 1}`)
+        .scrollIntoView({ behavior: 'smooth' });
     });
   }
 };
