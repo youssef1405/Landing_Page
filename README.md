@@ -1,14 +1,32 @@
-# Landing Page Project
+# Dynamic Landing Page Project
 
-## Table of Contents
+## Project Description
 
-* [Instructions](#instructions)
+This project is part of Udacity Front End Nanodegree program. The landing page creates navigation dynamically using Javascript, scrolls to sections when clicking on the corresponding navbar item, and activates pages' sections in the viewport as you scroll.
 
-## Instructions
+## Features
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+- The navbar items are created dynamically everytime a new section is created in the html
+- The page higlights the active section while scrolling
+- clicking on an item from the navigation menu, scrolls to the appropraite section
+- Responsive
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Installation
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
-# Landing_Page
+- Download the zip file or use git clone to get a copy
+- open the index.html in any browser.
+
+## Project Struture
+
+- index.html
+- css
+  - styles.css
+- js
+  - app.js
+- README.md
+
+## Built with
+
+- HTML5
+- CSS3
+- Javascript
