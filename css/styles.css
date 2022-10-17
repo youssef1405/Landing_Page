@@ -96,7 +96,7 @@ section {
 
 /* Header Styles */
 .page__header {
-  background: #fff;
+  background: rgb(175, 175, 175);
   position: fixed;
   top: 0;
   width: 100%;
@@ -235,5 +235,35 @@ section.your-active-class .landing__container::after {
   }
   to {
     transform: rotate(360deg) translate(-1em) rotate(-360deg);
+  }
+}
+
+/* SMALL DEVICES */
+@media (max-width: 450px) {
+  .navbar__menu li {
+    display: block;
+    border: solid 1px #fff;
+    font-size: 14px;
+  }
+
+  .navbar__menu ul {
+    text-align: center;
+  }
+
+  .main__hero h1 {
+    font-size: 2em;
+  }
+
+  .landing__container h2 {
+    font-size: 22px;
+  }
+
+  .landing__container p,
+  .page__footer {
+    font-size: 14px;
+  }
+
+  main {
+    margin-top: 250px;
   }
 }
