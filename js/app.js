@@ -1,44 +1,13 @@
 /**
- *
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- *
- * Dependencies: None
- *
- * JS Version: ES2015/ES6
- *
- * JS Standard: ESlint
- *
- */
-
-/**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
- */
-
-/**
- * Define Global Variables
- *
+ * Global Variables
  */
 
 const navbarList = document.getElementById('navbar__list');
 const sections = document.querySelectorAll('section');
 
 /**
- * End Global Variables
- * Start Helper Functions
- *
+ * this function create the navigation menu dynamically
  */
-
-/**
- * End Helper Functions
- * Begin Main Functions
- *
- */
-
-// build the nav
 const createNavbar = () => {
   for (let i = 0; i < sections.length; i++) {
     const listItem = document.createElement('li');
@@ -50,19 +19,9 @@ const createNavbar = () => {
   }
 };
 
-// Add class 'active' to section when near top of viewport
-
-// Scroll to anchor ID using scrollTO event
-
 /**
- * End Main Functions
- * Begin Events
- *
+ * this function Scroll to section on link click
  */
-
-// Build menu
-
-// Scroll to section on link click
 const scrollToSection = () => {
   const menuLinks = document.querySelectorAll('.menu__link');
   for (let i = 0; i < menuLinks.length; i++) {
@@ -74,22 +33,28 @@ const scrollToSection = () => {
   }
 };
 
-// Add an active state to navigation menu items when section in viewport
-
-// Set sections as active
-
+/**
+ * the block of code below is responsible for activating and deactivating
+ * the sections and the nav items while the user is scrolling the page.
+ */
 document.addEventListener('scroll', () => {
   for (let i = 0; i < sections.length; i++) {
     if (
       sections[i].getBoundingClientRect().top < 150 &&
       sections[i].getBoundingClientRect().bottom > 150
     ) {
+      // Set sections as active
       sections[i].classList.add('your-active-class');
+
+      // Add an active state to navigation menu items when section in viewport
       document
         .querySelectorAll('.menu__link')
         [i].classList.add('active-menu-link');
     } else {
+      // set the other sections inactive
       sections[i].classList.remove('your-active-class');
+
+      // set the other navigation items inactive
       document
         .querySelectorAll('.menu__link')
         [i].classList.remove('active-menu-link');
@@ -97,5 +62,6 @@ document.addEventListener('scroll', () => {
   }
 });
 
+// Build menu
 createNavbar();
 scrollToSection();
